@@ -68,6 +68,18 @@ services:
         networks: 
             - laravel-9
 
+    #mailhog
+    mailhog:
+        container_name: mailhog_laravel
+        image: mailhog/mailhog:latest
+        logging:
+            driver: 'none'
+        ports:
+            - "1025:1025"
+            - "8025:8025"
+        networks:
+            - laravel-9
+
     #phpmyadmin
     phpmyadmin:
         container_name: phpmyadmin_laravel
